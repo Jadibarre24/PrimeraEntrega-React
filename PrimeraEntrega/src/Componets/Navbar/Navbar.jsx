@@ -6,23 +6,27 @@ import {
     BreadcrumbLink,
     BreadcrumbSeparator,
   } from '@chakra-ui/react'
-  import { Flex } from "@chakra-ui/react"
+  import { 
+    Flex,
+    Heading,
+    Box,
+   } from "@chakra-ui/react"
 
 const Navbar = () => {
   return (
     <Flex 
     justifyContent={'space-between'} marginLeft={'10'}bgColor={'white'} w={'100'}>
-        <Breadcrumb separator='-'>
+        <Breadcrumb separator='|' margin={1}>
             <BreadcrumbItem>
                 <BreadcrumbLink href='#'>Home</BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-                <BreadcrumbLink href='#'>About</BreadcrumbLink>
+                <BreadcrumbLink href='./pages/Us54'>Nosotros</BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
+                <BreadcrumbLink href='#'>Contacto</BreadcrumbLink>
             </BreadcrumbItem>
         </Breadcrumb>
         <CartWidget/>
