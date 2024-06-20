@@ -12,7 +12,7 @@ function App() {
   // 2. Wrap ChakraProvider at the root of your app
   return (
     <ChakraProvider >
-      <Box bg={'lightgray'}>
+      <Box bg={'black'}>
         <Navbar/>
         <ItemListContainer tittle='Dulce Compañia'/>
       </Box>
