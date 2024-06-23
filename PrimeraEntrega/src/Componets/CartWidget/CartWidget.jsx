@@ -1,13 +1,15 @@
 import React from 'react'
 import { BsCart4 } from "react-icons/bs";
-import { Box, Flex,Text, } from "@chakra-ui/react"
+import { Box, Button, Flex,Text } from "@chakra-ui/react"
+import { AiOutlineAccountBook } from 'react-icons/ai';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 const CartWidget = () => {
   return (
-    <Box marginRight={'10'} marginTop={'2'} >
-        <BsCart4  /> 
-    </Box>
+    <Button variant={'ghots'} marginRight={'10'} >
+        <BsCart4 color='#420208' /> 
+    </Button>
   )
 }
 
