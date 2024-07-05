@@ -1,21 +1,25 @@
 import React from 'react'
 import Item from '../Item/Item'
-import { Box } from '@chakra-ui/react'
+import { Box ,Flex} from '@chakra-ui/react'
+import { wrap } from 'framer-motion'
+import '../../sass/ItemList.scss'
+
+
 
 const ItemList = ({products}) => {
 
 
 
   return (
-    <div>
+    <Flex className='cardItem'>
         {
             products.map((prod)=>(
                 <Box key={prod.id}>
                     <Item {...prod}/>
                 </Box>
             ))
-        }
-    </div>
+        } 
+    </Flex>
   )
 }
 

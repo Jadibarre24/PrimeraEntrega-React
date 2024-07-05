@@ -7,9 +7,9 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const CartWidget = () => {
   return (
-    <Button variant={'ghots'} marginRight={'10'} >
-        <BsCart4 color='#420208' /> 
-    </Button>
+    <Box marginTop={3}>
+       <BsCart4 color='#420208'  /> 
+    </Box>
   )
 }
 

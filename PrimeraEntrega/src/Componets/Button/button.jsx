@@ -9,7 +9,7 @@ const button = () => {
    
   return (
     <Box>
-      <Button colorScheme='#420208'>
+      <Button >
         
       </Button>
     </Box>
