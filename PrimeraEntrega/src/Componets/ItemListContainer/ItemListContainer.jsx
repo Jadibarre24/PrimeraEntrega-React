@@ -4,28 +4,42 @@ import { Box,Flex,Text,Heading } from "@chakra-ui/react"
 import { getProducts, getProductsByCategory } from '../../data/asyncMock';
 import ItemList from '../ItemList/ItemList';
 import {  useLocation, useParams } from 'react-router-dom';
+import { MoonLoader } from 'react-spinners';
 
 const ItemListContainer = ({tittle}) => {
-  const location =useLocation()
+ /*  const location =useLocation()
   const params =useParams()
   console.log(location)
-  console.log(params)
+  console.log(params) */
 
-  const [products, setPrpducts ] = useState([])
+  const [products, setProducts ] = useState([])
+
+  const [loaging,setLoading] = useState(true)
+  
   const {categoryId}= useParams()
+
   
 
-    useEffect(() =>{
-    getProducts()
-    setPrpducts(getProductsByCategory(categoryId))
-  //   .then((res) => setPrpducts(res))
-  //   .catch ((error)=> console.log(error))
-  },[])
+  useEffect(() =>{
+  /* getProducts()
+  setProducts(getProductsByCategory(categoryId)) */
+    setLoading(true)
+  const dataProducts =categoryId ? getProductsByCategory(categoryId) : getProducts()
+  
+  dataProducts
+    .then((data) => setProducts(data))
+    .catch ((error)=> console.log(error))
+    .finally(()=> setLoading(false))
+  },[categoryId])
   
 
   return (
     <Flex justify={'center'} direction={'column'} align= {'center'}fontSize={'x'} fontStyle={'normal'} bgColor={'pink'} textColor={'#420208'}>
-      <ItemList products = {products}/>
+      {
+        loaging ?
+        <MoonLoader />:
+        <ItemList products = {products}/>
+      }
     </Flex>
 
   )

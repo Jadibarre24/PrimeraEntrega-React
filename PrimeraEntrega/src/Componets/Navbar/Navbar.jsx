@@ -15,6 +15,7 @@ import {
   MenuDivider,
 } from '@chakra-ui/react'
 import ItemCount from '../ItemCount/ItemCount'
+import logo from '../ItemCount/ItemCount'
 
 const Navbar = ({tittle}) => {
   return (
@@ -48,7 +49,6 @@ const Navbar = ({tittle}) => {
         {tittle}
       </Heading> 
         <CartWidget/>
-        <ItemCount/>
     </Flex>
   )
 }

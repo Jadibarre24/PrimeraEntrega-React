@@ -7,14 +7,14 @@ import '../../sass/ItemList.scss'
 
 
 const ItemList = ({products}) => {
-
+console.log(products)
 
 
   return (
     <Flex className='cardItem'>
         {
             products.map((prod)=>(
-                <Box key={prod.id}>
+                <Box key={prod.clase}>
                     <Item {...prod}/>
                 </Box>
             ))

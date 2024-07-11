@@ -111,7 +111,19 @@ export const productos =[
         descripcion:"Masmelos decorados para toda ocacion",
         img: "https://i.postimg.cc/WpCbkF45/Tutus.jpg",
     },
+    {
+        id: 13,
+        nombre: "Chocolates personalizados",
+        precio: 25000,
+        clase: 'Chocolates',
+        stock: 250,
+        descripcion:"Fresas recubiertas de chocolate decoradas para eventos especiales",
+        img: "https://i.postimg.cc/dVM1zkPh/Chocolates-personalizados.jpg"
+        //logo: "https://i.postimg.cc/nL2hj3sm/Logo.jpg"
+    },
 ]
+
+    
 
 
 export const getProducts = () =>{
@@ -121,8 +133,28 @@ export const getProducts = () =>{
         },2000);
     });
 };
+
+export const getProductsByCategory =(category)=>{
+    return new Promise ((res) =>{
+        const productosFiltrados= productos.filter((prod) => prod.clase === category)
+        setTimeout(()=>{
+            res(productosFiltrados)
+        },2000);
+    })
+}
+
+export const getproductsById = (id) =>{
+    return new Promise((res) => {
+        const productosFiltrados = productos.find((prod)=> prod.id === parseInt (id));
+        setTimeout(()=>{
+            res(productosFiltrados);
+        }, 2000);
+    });
+};
+
+/* 
 export const getProductsByCategory = (category) => {
-    console.log(category)
+    
     if (!category) {
         return productos
     }
@@ -131,15 +163,14 @@ export const getProductsByCategory = (category) => {
     );
     return productosFiltrados
        
-};
+}; */
 
 /* 
-https://i.postimg.cc/dVM1zkPh/Chocolates-personalizados.jpg
 
 
 
 
-https://i.postimg.cc/nL2hj3sm/Logo.jpg
+
 https://i.postimg.cc/cH51T6B4/Masapan.jpg
 
 
